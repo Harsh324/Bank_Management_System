@@ -4,7 +4,7 @@ import java.util.*;
 
 //import javax.lang.model.util.ElementScanner14;
 
-class Bank
+abstract class Bank
 {
     protected String Name, Phone, Email, Address, AccountType, Customer_ID,  Account_ID;
 
@@ -74,7 +74,13 @@ class Bank
 
 class Admin extends Bank
 {
-    
+    private String User;
+    private String Pass;
+    public Admin(String user, String pass)
+    {
+        User = user;
+        Pass = pass;
+    }
     public boolean Validate() 
     {
         System.out.println("\nEnter 1 if new user\nEnter 2 if already user");
@@ -222,6 +228,13 @@ class Admin extends Bank
 class Customer extends Bank
 {
     private Double Balance, Principal_Amount;
+    private String User, Pass;
+
+    public Customer(String user, String pass)
+    {
+        User = user;
+        Pass = pass;
+    }
 
     public void Load_Customer()
     {

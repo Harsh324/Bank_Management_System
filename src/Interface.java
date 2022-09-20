@@ -4,10 +4,15 @@ import java.util.*;
 
 class Interface
 {
+    //private static Bank Bk;
+    protected static Admin Adm;
+    protected static Customer Cstm;
+    protected static Scanner sc;
+
     public static void main(String[] args) throws IOException 
     {
 
-        Scanner sc = new Scanner(System.in);
+        sc = new Scanner(System.in);
         System.out.println("\nWelcome to Bank\n");
 
         while(true)
@@ -18,7 +23,7 @@ class Interface
 
             if(Num == 1)
             {
-                Admin Adm = new Admin();
+                Adm = new Admin("Sar", "Ras");
                 while(true)
                 {
                     System.out.println(
@@ -78,7 +83,7 @@ class Interface
             }
             else if(Num == 2)
             {
-                Customer Cstm = new Customer();
+                Cstm = new Customer("Cur", "Ruc");
                 Cstm.Load_Customer();
                 Cstm.Load_Account();
                 while(true)
